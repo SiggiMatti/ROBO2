@@ -1,4 +1,4 @@
-´´´
+```
 #pragma config(Motor,  port1,           rightMotor,    tmotorNormal, openLoop, reversed)
 #pragma config(Motor,  port10,           leftMotor,     tmotorNormal, openLoop)   
 
@@ -25,4 +25,4 @@ task main()
 	stopAllTasks();  // Þegar for loopan er búin hættir forritið
 }												        // Program ends, and the robot stops
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-´´´
+```
