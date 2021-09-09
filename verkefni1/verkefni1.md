@@ -1,4 +1,4 @@
-![flow](https://github.com/SiggiMatti/ROBO2/blob/main/verkefni1/verkefni1A.png)  
+
 ```c
 #pragma config(Motor,  port1,           rightMotor,    tmotorNormal, openLoop, reversed)
 #pragma config(Motor,  port10,           leftMotor,     tmotorNormal, openLoop)   
