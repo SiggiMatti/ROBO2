@@ -3,7 +3,7 @@
 #pragma config(Sensor, dgtl4,  rightEncoder,   sensorQuadEncoder)
 #pragma config(Sensor, dgtl6,  leftEncoder,    sensorQuadEncoder)
 #pragma config(Sensor, dgtl10, bumpSwitch,     sensorTouch)
-#pragma config(Sensor, dgtl11, Sensor,         sensorSONAR_cm)
+#pragma config(Sensor, dgtl11, sonicSensor,         sensorSONAR_cm)
 #pragma config(Motor,  port1,           rightMotor,    tmotorServoContinuousRotation, openLoop, reversed)
 #pragma config(Motor,  port10,          leftMotor,     tmotorServoContinuousRotation, openLoop)
 
@@ -39,7 +39,7 @@ task main()
 		//resetEncoder();
 		while(SensorValue(lightSensor) < 500)
 		{
-			while(SensorValue[Sensor] > 40 || SensorValue[Sensor] == -1 ){
+			while(SensorValue[sonicSensor] > 40 || SensorValue[sonicSensor] == -1 ){
 				if(abs(SensorValue[rightEncoder]) == abs(SensorValue[leftEncoder]))
 				{
 					motor[rightMotor] = -80;
