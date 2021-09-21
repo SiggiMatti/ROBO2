@@ -28,48 +28,44 @@ void stopMotor(int stopTime) {
 	wait1Msec(stopTime);
 }
 
-void drive() {
-	if(abs(SensorValue[rightEncoder]) == abs(SensorValue[leftEncoder]))
-	{
-		motor[rightMotor] = -80;
-		motor[leftMotor]  = -80;
-	}
-	else if(abs(SensorValue[rightEncoder]) > abs(SensorValue[leftEncoder]))
-	{
-		// Beygja smá til vinstri
-		motor[rightMotor] = -60;
-		motor[leftMotor]  = -80;
-	}
-	else
-	{
-		// Beygja smá til hægri
-		motor[rightMotor] = -80;
-		motor[leftMotor]  = -60;
-	}
-}
-
 void resetEncoder() {
 	SensorValue[rightEncoder] = 0;
 	SensorValue[leftEncoder] = 0;
 }
 task main()
 {
-	startTask(stopTasks);
-	resetEncoder();
-	while(SensorValue(lightSensor) > 200) // Býð eftir ljósi
-	{
-
-	}
-	while(1 == 1) {
-		drive();
-		if (SensorValue[Sensor] < 30) {
+	while(true) {
+		wait1Msec(2000);
+		startTask(stopTasks);
+		//resetEncoder();
+		while(SensorValue(lightSensor) < 500)
+		{
+			while(SensorValue[Sensor] > 40 || SensorValue[Sensor] == -1 ){
+				if(abs(SensorValue[rightEncoder]) == abs(SensorValue[leftEncoder]))
+				{
+					motor[rightMotor] = -80;
+					motor[leftMotor]  = -80;
+				}
+				else if(abs(SensorValue[rightEncoder]) > abs(SensorValue[leftEncoder]))
+				{
+					// Beygja smá til vinstri
+					motor[rightMotor] = -60;
+					motor[leftMotor]  = -80;
+				}
+				else
+				{
+					// Beygja smá til hægri
+					motor[rightMotor] = -80;
+					motor[leftMotor]  = -60;
+				}
+			}
 			stopMotor(200);
 			turn(90, 1);
 			resetEncoder();
 			stopMotor(200);
 		}
-	}
 
+	}
 }
 //++++++++++++++++++++++++++++++
 
