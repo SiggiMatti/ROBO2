@@ -1,7 +1,7 @@
 ### Lýsing á verkefni
 Ég læt róbotinn elta línu með línusensorunum sem LCD sýnir values af. Ég læt hluti fyrir veginn hans og hann tekur eftir því með sonic sensor og færir það frá með því að beygja með hjálp gyro og heldur síðan áfram eftir línunni.
-Þrautin: (https://github.com/SiggiMatti/ROBO2/blob/main/verkefni5/traut.png)[hér]
-Vídjó af virkni: (https://youtu.be/DamfeEkbZJY)[hér]
+Þrautin: [Hér](https://github.com/SiggiMatti/ROBO2/blob/main/verkefni5/traut.png)  
+Vídjó af virkni: [Hér](https://youtu.be/DamfeEkbZJY)  
 
 ### Sensorar:  
 * Línusensor (analog) 
